@@ -1,0 +1,85 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+\geometry{margin=1.5cm}
+
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{enumitem}
+
+\definecolor{solutionred}{RGB}{180,0,0}
+
+\lstset{
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\title{COSC 3P91 -- Advanced Object-Oriented Programming\\
+Laboratory 9: Design Patterns (Behavioral) and XML Processing}
+\author{Department of Computer Science \\ Brock University}
+\date{Winter Term}
+
+\begin{document}
+
+\maketitle
+
+%=========================================================
+\section*{Overview}
+While Laboratory 7 focused on Creational and Structural patterns for object instantiation and composition, Laboratory 8 transitions the focus toward \textbf{Behavioral patterns} and \textbf{Structured Data Processing}. This laboratory emphasizes the interaction and responsibility of objects, as well as the ability to decouple data persistence from business logic through XML. Students will explore how behavioral patterns like Strategy, Observer, and Null Object minimize hard-coding and loose dependencies , while utilizing industry-standard Java APIs for XML Processing (JAXP) to manage interoperable data structures.
+
+\section*{Learning Objectives}
+By completing this laboratory, students will be able to:
+\begin{itemize}
+    \item Apply behavioral design patterns to manage object interactions and responsibilities effectively.
+    \item Implement \textbf{XML parsing} using the Document Object Model (DOM) to represent data as a language-neutral tree structure.
+    \item Utilize the \textbf{Strategy Pattern} to allow different variants of an algorithm to be selected at runtime.
+    \item Integrate the \textbf{Observer Pattern} as a cornerstone of the Model-View-Controller (MVC) architecture to inform objects of state changes.
+    \item Use the \textbf{Null Object Pattern} as a robust alternative to null references for indicating the absence of an object.
+    \item Differentiate between various XML processing methods, including DOM, SAX, and StAX.
+\end{itemize}
+
+%=========================================================
+\section*{Given Problem Description: The ``Dynamic Catalog System''}
+You are tasked with building a robust data-driven application that processes a product catalog and applies dynamic business logic based on the data retrieved.
+\begin{itemize}
+    \item \textbf{Structured Data:} Create a custom XML catalog that persists product information, including identifiers, names, and availability status.
+    \item \textbf{Tree-Based Parsing:} Implement a system to parse this XML into a generic tree structure using DOM, mapping the elements to a Java Object Model.
+    \item \textbf{Algorithm Variants:} Implement a pricing system using the \textbf{Strategy Pattern} to switch between regular pricing and discount variants without modifying the product classes.
+    \item \textbf{Robust Absence Handling:} Refactor search logic to utilize the \textbf{Null Object Pattern}, ensuring the system remains operational even when requested items are missing from the XML.
+    \item \textbf{Event Notification:} Use the \textbf{Observer Pattern} to ensure that any updates to the underlying data model automatically notify the system's display components.
+\end{itemize}
+
+%=========================================================
+\section*{Analysis Tasks}
+Students must answer the following questions to verify their understanding of the implementation:
+\begin{enumerate}
+    \item What is the purpose of the Null Object Pattern, and how does it improve system stability compared to standard null checks? 
+    \item Contrast the DOM and SAX parsing models. In what scenario is a tree-based structure preferred over an event-driven approach? 
+    \item Explain how the Strategy Pattern facilitates ``loose coupling'' in the context of an algorithm's implementation.
+    \item Why is the Observer Pattern considered a cornerstone of the Model-View-Controller (MVC) architecture? 
+    \item How does XML contribute to interoperability across different applications, systems, and hardware? 
+\end{enumerate}
+
+%=========================================================
+\section*{Required Task}
+The solution must:
+\begin{enumerate}
+    \item Author a \texttt{catalog.xml} file from scratch, utilizing attributes and nested elements to represent a well-formed data structure.
+    \item Implement a Java-based \textbf{DOM Parser} using JAXP to navigate the XML tree and bind data to an \texttt{AbstractProduct} model.
+    \item Implement the \textbf{Null Object Pattern} by creating a \texttt{NullProduct} subclass to handle unavailable items.
+    \item Implement at least two concrete \textbf{Strategy} classes (e.g., \texttt{RegularPrice}, \texttt{SalePrice}) to demonstrate dynamic algorithm selection.
+    \item Implement an \textbf{Observer} mechanism (using the Java Observable API or a custom interface) to monitor data loading events.
+    \item Provide a short design justification for each behavioral pattern used, explaining how it handles object responsibility.
+\end{enumerate}
+
+
+%=========================================================
+\section*{Key Takeaways}
+
+\textcolor{solutionred}{
+This laboratory emphasizes that professional Java applications must handle both data and object interactions through structured, reusable architectures. By mastering behavioral patterns, developers can ensure that object communication is loosely coupled and highly maintainable. Furthermore, proficiency in XML processing allows for the creation of interoperable systems that can easily share and transport data across diverse platforms. These best practices are essential for developing sophisticated, data-driven software that is expressive and robust.
+}
+
+\end{document}
