@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    catalog.xml - Product Catalog for the Dynamic Catalog System
+    Demonstrates well-formed XML with attributes and nested elements.
+-->
+<catalog>
+    <product id="P001" available="true">
+        <name>Laptop Pro 15</name>
+        <price>1299.99</price>
+        <category>Electronics</category>
+        <description>High-performance laptop with 15-inch display and 16GB RAM.</description>
+    </product>
+    <product id="P002" available="true">
+        <name>Wireless Mouse</name>
+        <price>29.99</price>
+        <category>Accessories</category>
+        <description>Ergonomic wireless mouse with long battery life.</description>
+    </product>
+    <product id="P003" available="false">
+        <name>USB-C Hub</name>
+        <price>49.99</price>
+        <category>Accessories</category>
+        <description>7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader.</description>
+    </product>
+    <product id="P004" available="true">
+        <name>Mechanical Keyboard</name>
+        <price>89.99</price>
+        <category>Accessories</category>
+        <description>Tactile mechanical keyboard with RGB backlight.</description>
+    </product>
+    <product id="P005" available="false">
+        <name>4K Monitor</name>
+        <price>399.99</price>
+        <category>Electronics</category>
+        <description>27-inch 4K UHD monitor with HDR support.</description>
+    </product>
+</catalog>
